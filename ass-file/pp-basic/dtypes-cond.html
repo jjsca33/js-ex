@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+
+    <body>
+        <script>
+/* Understand the difference between single, double, and backtick quotes. 
+Embed a variable/expression in a string.
+Understand what a method is.
+Name the three logical operators.
+Understand what the comparison operators are.
+Understand what conditionals are.
+Understand what nesting is.
+Understand what truthy and falsy values are.
+*/           
+            //1 
+            let greeting = "hello";
+            console.log (greeting + ", world!");
+            
+            //2 
+            let name = 'james';
+            console.log(`hello, ${name}!`);
+
+            //3
+            const a = 5;
+            const b = 10;
+            let sum = a + b;
+            console.log(`The sum of ${a} and ${b} is ${sum}.`);
+
+            //4
+            const city = 'Paris';
+            console.log(`welcome to ${city}!`);
+
+            //5
+            const x = 7; const y = 4;
+            console.log(`the product of 7 and 4 is ${x * y}.`);
+
+            // 6
+            const price = 50; const discount = 0.1;
+            console.log(`the discounted price is$${price * (1-discount)}.`);
+
+            //7 
+            let message = 'javascript is awesome';
+            console.log(message.toUpperCase(message));
+
+            //8
+            let colors = ['red', 'green', 'blue'];
+            colors.push('yellow');
+            console.log(colors);
+
+            //9
+            let word = ' hello ';
+            word.trim(word);
+            word.toUpperCase(word);
+            console.log(word);
+
+            //10
+            let age = 20;
+            let hasTicket = true;
+            if (age >= 18 && hasTicket) {
+                console.log('entry allowed');
+            }
+
+            //11
+            let isWeekend = true;
+            let isHoliday = false;
+            if (isWeekend || isHoliday) {
+                console.log('no work today');
+            }
+            //12
+            let isLoggedIn = true;
+            if (isLoggedIn != true) {
+                console.log('please log in');
+            }
+
+            if (!isLoggedIn) {
+            console.log('please log in');
+            }
+
+            //13
+            const num1 = 5; const num2 = '5';
+            const r1 = (num1 == num2);
+            const r2 = (num1 === num2);
+            if (r1) {
+                console.log(r1);
+            }
+            if(!r2) {
+                console.log(r2);
+            }
+
+            //14
+            const score = 85;
+            if (score >= 60) {
+                console.log('pass');
+            }
+                else {
+                    console.log('fail');
+                }
+            
+
+            //15
+            let userRole = 'guest';
+            if (userRole !== 'admin') {
+                console.log('Access granted');
+            }
+                else {
+                    console.log('restricted access');
+                }
+
+            //16
+            const temp = 30;
+            if (temp >= 30) {
+                console.log('its hot outside');
+            }
+
+            //17
+            const hour = 20;
+            if (hour <= 12) {
+                console.log('good morning');            }
+            else {
+                console.log('good afternoon');
+            }
+            
+            //18
+            const marks = 75;
+            if (marks >= 90) {
+                console.log('excellent');
+            } else if (marks >= 70) {
+                console.log('good');
+            } else {
+                console.log ('need improvement');
+            }
+
+            //19 
+            const userAge = 19;
+            const hasPerm = true;
+            if ((userAge >= 18) && hasPerm) {
+                console.log('access granted');
+            } else if ((userAge >= 18) && (hasPerm == false)) {
+                console.log ('permission required');
+            }else if ((userAge < 18)) {
+                console.log('access denied due to age');
+            } 
+
+            //20
+            for (let row = 1; row <= 3; row++) {
+                for (let column =1; column <= 3; column++) {
+                    console.log(`row: ${row}, column: ${column}`);
+                }
+            }
+
+            //21
+            const value1 = '';
+            const value2 = 42;
+            if (value1) {
+                console.log('value is truthy');
+            } else {
+                console.log('value is falsy');
+            }
+            if (value2) {
+                console.log('value is truthy');
+            } else {
+                console.log('value is falsy');
+            }
+            //22
+            let username = null;
+            if (!username) {
+                console.log('username is not set');
+            } else {
+                console.log('username is set');
+            }
+            //23 didn't complete
+            /*
+            let input = undefined;
+            console.log(input);
+            
+            let input = undefined;
+            input = input || "Default";
+            console.log(input); // Outputs: "Default"
+            */
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
