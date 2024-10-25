@@ -10,7 +10,50 @@
 
     <body>
         <script>
-        
+
+        //1
+        function sayHello(name) {
+            console.log(`Hello, ${name}!`);
+        }
+        sayHello('james');
+
+        //2
+        function multiply(num1, num2) {
+            let prod = num1 * num2;
+            return prod; //after result is called, function stops executing, any code after won't run
+            
+        }
+        let result = multiply(2,4); // since prod is a local variable, need to store the function result in a global variable to log it. 
+        console.log(result);
+
+        //2a
+        function calculateArea(length, width) {
+            let area = length * width;
+            return area;
+        }
+        let result1 = calculateArea(2,34);
+        console.log(result1);
+
+        //2b
+        function celsiusToFahrenheit(celcius) {
+            let fah = ((celcius * 9/5) + 32);
+            return fah;
+        }
+        let result2 = celsiusToFahrenheit(43);
+        console.log(result2);
+
+        //2c
+        function findMax(a, b) {
+            if (a > b) {
+                return a;
+            }
+            else {
+                return b;
+            }
+            return big;
+        }
+        let result3 = findMax(4,100);
+        console.log(result3);
 
 
 
