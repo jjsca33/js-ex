@@ -50,11 +50,30 @@
             else {
                 return b;
             }
-            return big;
         }
         let result3 = findMax(4,100);
         console.log(result3);
 
+        //3 
+        const outsideMessage = "I'm outside!";
+        function showMessage() {
+            const insideMessage = "I'm inside!";
+            console.log(outsideMessage);
+            console.log(insideMessage);
+        }
+        showMessage();
+
+        //4 
+        const name = "outer";
+        function showName() {
+            const name = "inner";
+            console.log(name);
+        }
+        showName();
+        console.log(name);
+
+
+       
 
 
 
