@@ -13,12 +13,45 @@
     //if - check for a condition
     //split method - takes a string and makes each element into an object
     // answer - key:value pair, key = each vowel, value is the index value of array
-    const acceptStr = (str) => { 
-        const vowels = 'aeiouAEIOU';
-        for (let i = 0; i < str.length; i++) {
-            if ()
+    /* WRONG
+    function valueLoci(str) {
+        const countObject = {}; //init object
+        const vowelList = 'aeiouAEIOU';
+        for (const vowelList of str) {
+            if (countObject[vowelList] !== -1) {
+                countObject[vowelList]++;
+            } else {
+                countObject[vowelList] = 1;
+            }
         }
+        return countObject;
     }
+    const result = valueLoci('mdjflakjlkdfjlke');
+    console.log(result);
+    */
+
+    function valueLoci2 (str) {
+        const countObject2 = {}; //init object to store vowels and indicies
+        const vowelList2 = 'aeiouAEIOU'; //define vowels
+
+        for (let i = 0; i < str.length; i++) {
+            const char = str[i]; //get current character
+
+            //check if the char is a vowel
+            if (vowelList2.includes(char)) {
+                //if vowel key exist, push index to array
+                if (countObject2[char]) {
+                    countObject2[char].push(i);
+                } else {
+                    // if its the first occurence, create an array with current index
+                    countObject2[char] = [i];
+                }
+            }
+        }
+        return countObject2;
+    }
+    const result2 = valueLoci2('fjdlakjfldaj');
+    console.log(result2);
 
     
 
