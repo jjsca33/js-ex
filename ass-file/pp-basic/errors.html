@@ -1,29 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-<script>
+  </head>
+  <body>
+    <script>
+      //easy
+      //1
+      //referenceError, but the result variable was not declared
+      //before the console.log code was run.
 
+      //2
+      function greet(name) {
+        return `Hello, ${name}!`;
+      }
 
+      //3
+      //typeError
+      const inputStr = 'hello';
+      console.log(inputStr.toUpperCase());
 
+      //4
+      let length = 3;
+      let width = 4;
+      function calculateArea() {
+        return length * width;
+      }
+      console.log(calculateArea());
 
+      //5
+      const a = (x) => {
+        let y = 4;
+      };
+      return x;
 
+      //medium
+      //1
+      //it means that the undefined cannot be used in place of the function word
+      //2
 
+      function addNumbers(a, b) {
+        let sum = a + b;
+        return sum.toUpperCase();
+      }
+      console.log(addNumbers(3, 4));
 
+      //3
 
+      const arr = [1, 2, 3];
+      for (let i = 0; i <= arr.length; i++) {
+        console.log(arr[i]);
+      }
+      //the error is in the for loop parameter section, i <= arr.length. It should be, i < arr.length. Since we start count 0, we only need the code to run up to the total length of the array, not including the total length. This causes a 4th undefined indices to appear
 
+      //4
+      function printName() {
+        if (true) {
+          let name = 'Alice';
+          console.log(name);
+        }
+      }
+      // the console.log(name) code was out of scope since the local varable 'name' can only be referenced within the if statment. moving the line of code into the if statment, it can use the name variable and print 'alice'.
 
+      //5
+      let num = null;
+      let numUp = num.toUpperCase;
 
+      //hard
+      //1
+      // referrenceError, total isn't defined within the fxn
+      // referenceError, out of scope
+      // typeError, the 'ten' should be a int, not a string.
+      // referenceError, the total variable used to callback;
+      function calculateTotal(price, quantity) {
+        let total = price * quantity;
+        console.log(total);
+        return total;
+      }
+      console.log(calculateTotal(10, 5));
 
+      //2
+      //typeError - user.name was not defined
+      // obtain the user.name using the prompt function
+      let user = {};
+      user.name = prompt('Enter your name:');
+      setTimeout((name) => {
+        console.log(user.name);
+      }, 1000);
 
+      //3
 
+      //COULD NOT SOLVE - TAKE NOTE
 
-    
-</script>
-    
-</body>
+      //4
+      //greet is a variable not a function. you need a fxn expression
+
+      const greet = (input) => 'Hello, World';
+      console.log(greet());
+
+      //5
+      //could not solve - take note
+    </script>
+  </body>
 </html>
