@@ -147,7 +147,7 @@
         let count = 0;
         const vow = 'aeiouAEIOU';
         for (let i = 0; i < str.length; i++) {
-          if (vow.indexOf((str[i]) !== -1)) count++;
+          if (vow.indexOf(str[i] !== -1)) count++;
         }
         return count;
       };
@@ -164,8 +164,7 @@
         return doubled;
       };
 
-     
-      const doubledNum = (input) => input.map(num => num ** 2);
+      const doubledNum = (input) => input.map((num) => num ** 2);
 
       //2 Create a function expression that takes an array and returns the sum of all positive numbers.
       //filter positive, then reduce to find sum
