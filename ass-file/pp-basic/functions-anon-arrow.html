@@ -1,239 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>functions: anon-arrow</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //example declaration
-        //hoisted used before declar
-        console.log(goodBye('bob'));
-        function goodBye(input){
-            return `Seeya later ${input}!`;
-        }
+      //example declaration
+      //hoisted used before declar
+      console.log(goodBye('bob'));
+      function goodBye(input) {
+        return `Seeya later ${input}!`;
+      }
 
-        //example expression
-        //greet fxn defined as fxn and assigned to variable greet, because a fucntion can be a variable. 
-        //
-        const greet = //entire line fxn expression is defined and assigned to the constant variable, the fxn greet.
-        
-        function(name) { //portion called, fxn expression
-            return `Hello, ${name}!`;
+      //example expression
+      //greet fxn defined as fxn and assigned to variable greet, because a fucntion can be a variable.
+      //
+      const greet = //entire line fxn expression is defined and assigned to the constant variable, the fxn greet.
+        function (name) {
+          //portion called, fxn expression
+          return `Hello, ${name}!`;
         };
-        console.log(greet('monkey'));
+      console.log(greet('monkey'));
 
-        //example arrow function for declar/expression
-        const hello = (name) => `Hello, ${name}!`;
-        console.log(hello('bunny'));
+      //example arrow function for declar/expression
+      const hello = (name) => `Hello, ${name}!`;
+      console.log(hello('bunny'));
 
-        //practice
-        //easy
-        //1
-        const sum = function(x, y) {
-            x + y;
-            return x +y;
+      //practice
+      //easy
+      //1
+      const sum = function (x, y) {
+        x + y;
+        return x + y;
+      };
+      console.log(sum(1, 2));
+
+      const sum1 = (x, y) => x + y;
+      console.log(sum1(1, 2));
+
+      //2
+      const mult1 = function (x, y) {
+        x * y;
+        return x * y;
+      };
+      console.log(mult1(4, 6));
+
+      const mult2 = (x, y) => x * y;
+      console.log(mult2(4, 6));
+
+      //3
+      const fah1 = function (cel1) {
+        return (cel1 * 9) / 5 + 32;
+      };
+      console.log(fah1(344));
+
+      const fah2 = (cel2) => (cel2 * 9) / 5 + 32;
+      console.log(fah2(344));
+
+      //4
+      const gmess = (name) => `Hello ${name}!`;
+      console.log(gmess('james'));
+
+      //5
+      function checker(input) {
+        if (input === 7) {
+          console.log('its a match');
+        } else {
+          console.log('its not 7');
         }
-        console.log(sum(1,2));
+      }
 
-        const sum1 = (x, y) =>  x + y;
-        console.log(sum1(1,2));
+      //Medium
+      //1
+      function divide(x, y) {
+        return y / x;
+      }
+      const divide1 = (x, y) => y / x;
 
-        //2
-        const mult1 = function(x, y) {
-            x * y;
-            return x*y;
+      //2
+      function isPali(str) {
+        let j = str.length - 1; // j start @ end
+        for (let i = 0; i < str.length / 2; i++) {
+          //i start at beginning goes thru half of the string
+          if (str[i] != str[j]) {
+            //breaks code if it isn't a palidrome
+            return false;
+          }
+          j--; // decrement + makes sure j mirros i 'by design'
         }
-        console.log(mult1(4,6));
+        return true;
+      }
+      console.log(isPali('eye'));
 
-        const mult2 = (x, y) => x * y;
-        console.log(mult2(4,6));
-
-        //3
-        const fah1 = function(cel1) {
-            return  (cel1 * 9/5) + 32;
+      const isPali1 = function (str) {
+        let j = str.length - 1;
+        for (let i = 0; i < str.length / 2; i++) {
+          if (str[i] != [j]) {
+            return false;
+          }
+          j--;
         }
-        console.log(fah1(344));
-
-        const fah2 = (cel2) => (cel2 * 9/5) + 32;
-        console.log(fah2(344));
-
-        //4 
-        const gmess = (name) => `Hello ${name}!`;
-        console.log(gmess('james'));
-
-        //5
-        function checker(input) {
-            if (input === 7) {
-                console.log('its a match');
-            }
-            else {
-                console.log('its not 7');
-            }
-        } 
-
-        //Medium
-        //1
-        function divide(x, y) {
-            return y / x;
+        return true;
+      };
+      console.log(isPali1('james'));
+      const isPali2 = (str) => {
+        let j = str.length - 1;
+        for (let i = 0; i < str.length / 2; i++) {
+          if (str[i] !== str[j]) {
+            return false;
+          }
+          j--;
         }
-        const divide1 = (x,y) => y / x;
+        return true;
+      };
+      console.log(isPali2('monkey'));
 
-        //2
-        function isPali(str) {
-            let j = str.length - 1 // j start @ end
-            for (let i=0; i < str.length / 2; i++) { //i start at beginning goes thru half of the string
-                if (str[i] != str[j]) {  //breaks code if it isn't a palidrome
-                    return false;
-                }
-                j--; // decrement + makes sure j mirros i 'by design'
-            }
-            return true;
+      //3
+      function varSq(num) {
+        return num ** 2;
+      }
+      const varSq1 = function (num) {
+        return num ** 2;
+      };
+
+      //4
+      const maxVar = function (art) {
+        return Math.max(...art);
+      };
+      console.log(maxVar([1, 2, 3]));
+
+      //5
+      function countVowels(str) {
+        let count = 0;
+        const vowels = 'aeiuoAEIUO';
+        for (let i = 0; i < str.length; i++) {
+          if (vowels.indexOf(str[i] !== -1)) {
+            count++;
+          }
         }
-        console.log(isPali('eye'));
+        return count;
+      }
 
-        const isPali1 = function(str) {
-            let j = str.length - 1;
-            for (let i = 0; i < str.length / 2; i++) {
-                if ([i] != [j]) {
-                    return false;
-                }
-            j--; 
-            }
-            return true;
+      const countVow = (str) => {
+        let count = 0;
+        const vow = 'aeiouAEIOU';
+        for (let i = 0; i < str.length; i++) {
+          if (vow.indexOf((str[i]) !== -1)) count++;
         }
-        console.log(isPali1('james'));
-        const isPali2 = (str) => {let j = str.length - 1;
-            for (let i = 0; i < str.length /2; i++) {
-                if (str[i] !== str[j]) {return false}; j--;
-            } return true;
+        return count;
+      };
+
+      //hard
+      //1
+      // input => input **2,
+      //create function, take input of array, use ... operator to do math for each element in array, then return new array
+      const arrSq = (arr) => {
+        let doubled = [];
+        for (let i = 0; i < arr.length; i++) {
+          doubled.push(arr[i] ** 2);
         }
-        console.log(isPali2('monkey'));
+        return doubled;
+      };
 
-        //3
-        function varSq(num) {
-            return num ** 2;
-        }
-        const varSq1 = function(num) {return num ** 2;}
+     
+      const doubledNum = (input) => input.map(num => num ** 2);
 
-        //4
-        const maxVar = function(art) {return Math.max(...art);}
-        console.log(maxVar([1,2,3]));
+      //2 Create a function expression that takes an array and returns the sum of all positive numbers.
+      //filter positive, then reduce to find sum
+      //sign() find negative and positive numbers
 
-        //5
-        function countVowels(str) {
-            let count = 0;
-            const vowels = 'aeiuoAEIUO';
-            for (let i = 0; i < str.length; i++) {
-                if (vowels.indexOf(str[i] !== -1)) {
-                    count++;
-                }
-            }
-            return count;
-        }
+      let array = [1, 2, 3, -1, -4, -5];
+      const posiNum = array.filter((num) => Math.sign(num) == 1);
+      const posiTot = posiNum.reduce((total, posiNum) => total + posiNum, 0);
+      console.log(posiTot);
 
-        const countVow = str => {
-            let count = 0;
-            const vow = 'aeiouAEIOU';
-            for (let i = 0; i < str.length; i++) {if(vow.indexOf(str[i] !== -1)) count++;} return count;
-        }
-
-        //hard
-        //1
-        // input => input **2, 
-        //create function, take input of array, use ... operator to do math for each element in array, then return new array
-        const arrSq = arr => {
-            let doubled = [];
-            for (let i = 0; i < arr.length; i++) {doubled.push(arr[i] ** 2);} return doubled;}
-
-        const numbers = [];
-        const doubledNum = input => input.map(numbers ** 2);
-
-        //2 Create a function expression that takes an array and returns the sum of all positive numbers.
-        //filter positive, then reduce to find sum
-        //sign() find negative and positive numbers
-
-
-        let array = [1,2,3,-1,-4,-5];
-        const posiNum = array.filter(num => Math.sign(num) == 1);
-        const posiTot = posiNum.reduce ((total , posiNum) => total + posiNum, 0);
-        console.log(posiTot);
-
-        //3 Write a function declaration that takes a string and returns an object with the count of each character. 
-        //key-value pairs
-        function countChar(str) { //fxn declar
-            const countObject = {}; //init object
-            for (const charElement of str) { //loop through string
-                //check and update
-                if (countObject[charElement]) { //check if already exist
-                    countObject[charElement]++; //if exist, add count by 1
-                } else {
-                    countObject[charElement] = 1; //no exist, create count start at 1
-                }
-            }
-
-            return countObject;
-        }
-        const result = countChar("dddance");
-        console.log(result);
-
-        //4Using a function expression, write a function that takes a list of names and returns them in alphabetical order.
-        //function expression, object of list name, make new order alpha order.
-        const sortName1 = (name) => name.sort(); // (parameters) 
-        console.log(sortName1(['bob', 'mark']));
-
-        //5
-        // two set of numbers, find the common words, print it out
-        //filter to combine both arrays together, 
-        // includes ==> find the common words
-        // filter ==> create new array of commmon words
- 
-        const commonVarList = (arr1, arr2) => {
-           return arr1.filter(jkl => arr2.includes(jkl)) // the first jkl takes each item from the first arr1 and compares each arr2 item and keeps common, 
-           // //once common ones are foudn, .filter holds all of them and makes new array. 
+      //3 Write a function declaration that takes a string and returns an object with the count of each character.
+      //key-value pairs
+      function countChar(str) {
+        //fxn declar
+        const countObject = {}; //init object
+        for (const charElement of str) {
+          //loop through string
+          //check and update
+          if (countObject[charElement]) {
+            //check if already exist
+            countObject[charElement]++; //if exist, add count by 1
+          } else {
+            countObject[charElement] = 1; //no exist, create count start at 1
+          }
         }
 
-        const newList = (arr3, arr4) => {
-            //hold all common ones, ['lindy']
-            return arr3.filter(listVar => arr4.includes(listVar));
-        }
-        let arr10 = ['lindy', 'jimmy', 'james'];
-        let arr11 = ['tony', 'lindy', 'monkey'];
-        console.log(newList(arr10, arr11));
-      
+        return countObject;
+      }
+      const result = countChar('dddance');
+      console.log(result);
 
+      //4Using a function expression, write a function that takes a list of names and returns them in alphabetical order.
+      //function expression, object of list name, make new order alpha order.
+      const sortName1 = (name) => name.sort(); // (parameters)
+      console.log(sortName1(['bob', 'mark']));
 
+      //5
+      // two set of numbers, find the common words, print it out
+      //filter to combine both arrays together,
+      // includes ==> find the common words
+      // filter ==> create new array of commmon words
 
+      const commonVarList = (arr1, arr2) => {
+        return arr1.filter((jkl) => arr2.includes(jkl)); // the first jkl takes each item from the first arr1 and compares each arr2 item and keeps common,
+        // //once common ones are foudn, .filter holds all of them and makes new array.
+      };
 
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      const newList = (arr3, arr4) => {
+        //hold all common ones, ['lindy']
+        return arr3.filter((listVar) => arr4.includes(listVar));
+      };
+      let arr10 = ['lindy', 'jimmy', 'james'];
+      let arr11 = ['tony', 'lindy', 'monkey'];
+      console.log(newList(arr10, arr11));
     </script>
-</body>
+  </body>
 </html>
