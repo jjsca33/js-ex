@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="script.js">
+      //easy
+      //1
+      function productOf(x, y) {
+          let a = x + y;
+          return a * y;
+      }
+      //2
+      function processOrder(order) {
+          if (!order) {
+              return "order could not be processed";
+          }
+
+          if(!order.items || order.items===0) {
+              return "order could not be processed";
+          }
+          if(!order.paid) {
+              return "order could not be processed";
+          }
+
+          return "order processed";
+      }
+
+      //3
+      function checkUserAccess(user) {
+          if (!user) {
+              return 'Access denied';
+          }
+          if (!user.isAdmin) {
+              return "Access denied";
+          }
+
+          if (user) {
+              return 'Access granded';
+          }
+          if (user.isAdmin) {
+              return 'Admin access granted';
+          }
+      }
+      //4
+      function calculateTotal(price, tax) {
+          // makes total reuseable and simple to call result
+          let total = price + tax;
+          // to use total after fxn completed
+          return total;
+      }
+      //5
+      function multiply(x, y) {
+          let result = x * y;
+          return "Multiplication done: " + result;
+      }
+    </script>
+  </body>
+</html>
