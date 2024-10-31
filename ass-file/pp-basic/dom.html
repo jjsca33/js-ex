@@ -6,6 +6,162 @@
     <title>DOM pp</title>
 </head>
 <body>
+    <h2 id="header">Hello, World!</h2>
+    <script>
+
+    //Group 1 Easy
+        //1 Target an Element by ID: Given the HTML structure below, use JavaScript to select the <h2> element with the ID header and change its text to “Welcome!”.
+        const intro = document.querySelector('#header');
+        intro.setAttribute("header", "Welcome!");
+
+        //WRONG - TRY AGAIN
+
+        //2 Add a New Paragraph: Create a new <p> element with the text “This is a new paragraph.” Append it as the last child of a <div id="container">.
+        <div id="container"></div>
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a new paragraph';
+        const container = document.querySelector('#container');
+        container.appendChild(newParagraph);
+
+        //3 Remove an Element: Write JavaScript to remove the <button> element from the following HTML.
+        <button id="clickMe">Click Me!</button>
+        const clickMe = document.querySelector('#clickMe');
+        clickMe.remove();
+
+        //4 Modify an Element’s Style: Select a <div> with the ID box, and change its background color to “yellow” and its font color to “blue”.
+        const styleAttr = document.querySelector('#box');
+        styleAttri.style.backgroundColor = 'yellow';
+        styleAttr.style.color = 'blue';
+
+        //5 Use textContent vs. innerHTML: Set the textContent and innerHTML of a <p id="info"> element to:
+        //textContent: “JavaScript is fun!”
+        //innerHTML: “JavaScript is <b>fun</b>!”
+
+        const info = document.querySelector('#info');
+        info.textContent = 'JavaScript is fun!';
+        info.innerHTML = 'JavaScript is <b>fun</b>!';
+
+
+    //Group2 Easy
+        //1 Attach a Click Event: Select a button with the ID submitBtn and add a click event listener that displays an alert saying “Submitted!”.
+        <button id="submitBtn">Submit</button>
+        const submitBtn = document.querySelector("#submitBtn");
+        function buttonClick() {
+            alert("Submitted");
+        }
+        submitBtn.addEventListener("click", buttonClick);
+
+        //2 Add Multiple Click Events: Select a button with the ID infoBtn and add two different click event listeners to it: one that logs “First Click!” and another that logs “Second Click!”.
+        <button id="infoBtn">Info</button>
+        const infoBtn = document.querySelector("#infoBtn");
+        function firstClick() {
+            alert("First Click!");
+        }
+        function secondClick() {
+            alert("Second Click!");
+        }
+        infoBtn.addEventListener("click", firstClick);
+        infoBtn.addEventListener("click", secondClick);
+
+
+        //3 Use a Named Function for a Click Event: Write a named function sayHello that logs “Hello, World!” Attach this function to a button with the ID helloBtn using addEventListener.
+        <button id="helloBtn">Say Hello</button>
+        function sayHello() {
+            console.log("hello, world");
+        }
+        const helloBtn = document.querySelector('#helloBtn');
+        helloBtn.addEventListener("click", sayHello);
+
+
+        //4 Attach Click Events to a Group of Elements: Select all buttons with the class groupBtn. Use querySelectorAll and forEach to add a click event listener to each button that logs “Group Button Clicked!”.
+        <button class="groupBtn">Button 1</button>
+        <button class="groupBtn">Button 2</button>
+        <button class="groupBtn">Button 3</button>
+        const buttons = document.querySelectorAll(".groupBtn");
+        buttons.forEach(eachButton => {
+            eachButton.addEventListener("click", function() {
+                alert("Group Button Clicked!");
+            });
+        });
+
+
+
+        //5 Using Inline HTML Event: Add an inline event to a button with the text “Greet!” that shows an alert with the message “Hello from Inline!” when clicked.
+        <button onclick="alert('Hello from Inline!')">Greet!</button>
+
+    //G3 Easy PP
+        //1 Select the first <p> element in the following HTML using querySelector, and log its text content. Then, use querySelectorAll to select all <p> elements with the class text and log the text content of each.
+        <p class="text">First paragraph</p>
+        <p class="text">Second paragraph</p>
+        <p class="text">Third paragraph</p>
+
+        const text1 = document.querySelector(".text")
+        console.log(text1.textContent);
+        const textAll = document.querySelectorAll(".text");
+        textAll.forEach(eaText => console.log(eaText.textContent));
+        
+        //2 Select all elements with the class item using querySelectorAll. Convert the NodeList to an array and log the array to the console.
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+
+        const allItem = document.querySelectorAll((".item"));
+        const arrNodes = [...allItem];
+        console.log(arrNodes);
+
+        //3 Add a click event listener to the outer div that logs “Captured in Outer Div” during the capture phase. Add another click event to the button that logs “Button Clicked”. Experiment with clicking the button and observe the order of logs.
+        <div id="outerDiv">
+        <button id="innerButton">Click me!</button>
+        </div>
+
+        const parentDiv = document.getElementById("outerDiv");
+        const childDiv = document.getElementById("innerButton");
+
+        parentDiv.addEventListener("click", () => {console.log("Captured in Outer Div");}, {capture:true});
+
+        childDiv.addEventListener("click", () => {console.log("Captured in Inner Div");}, {capture: false});
+
+        //4 Create an inner and outer div. Attach a click event to each div, one in the bubbling phase and the other in the capture phase. Click the inner div and observe the order of the console logs.
+        <div id="outerDiv">
+        <div id="innerDiv">Inner Div</div>
+        </div>
+
+        const outerDiv = document.getElementById("outerDive");
+        const innerDiv = document.getElementById("innerDiv");
+        outerDiv.addEventListener("click", () => {console.log("Going down");}, {capture:true});
+        innerDiv = addEventListener("click", () => {console.log("Going up");}, {capture:false});
+
+        //5 Select all elements with the class circle using querySelectorAll. Use forEach to add a background color of “lightblue” to each one.
+        <div class="circle">Circle 1</div>
+        <div class="circle">Circle 2</div>
+        <div class="circle">Circle 3</div>
+
+        const allCircles = document.querySelectorAll(".circle");
+        allCircles.forEach(eachCirc => {
+            eachCirc.style.backgroundColor = "blue";
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>    
 
 </body>
 </html>
