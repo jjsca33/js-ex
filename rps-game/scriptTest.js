@@ -1,3 +1,5 @@
+// file used to test component behavior. not used for program
+
 //init scores of the game & num of rounds
 let humanScore = 0;
 let compScore = 0;
